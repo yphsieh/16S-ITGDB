@@ -152,16 +152,16 @@ if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--name', 		type=str  , default='Seq_ItgDB')
 	parser.add_argument('--ggFasta',	type=str  , default='../gg/99_otus.fasta')
-	parser.add_argument('--ggTxt',		type=str  , default='../gg/99_otu_taxonomy.txt')
+	parser.add_argument('--ggTaxa',		type=str  , default='../gg/99_otu_taxonomy.txt')
 	parser.add_argument('--slvFasta',	type=str  , default='../slv/silva-138-99-seqs.fasta')
-	parser.add_argument('--slvTxt',		type=str  , default='../slv/silva-138-99-tax.txt')
+	parser.add_argument('--slvTaxa',	type=str  , default='../slv/silva-138-99-tax.txt')
 	parser.add_argument('--rdpFasta',	type=str  , default='../rdp/RefOTUs.fasta')
-	parser.add_argument('--rdpTxt',		type=str  , default='../rdp/Ref_taxonomy.txt')
+	parser.add_argument('--rdpTaxa',	type=str  , default='../rdp/Ref_taxonomy.txt')
 	args = parser.parse_args()
 
-	gg_dict = Preprocess(fastaFile=args.ggFasta, txtFile=args.ggTxt)
-	slv_dict = Preprocess(fastaFile=args.slvFasta, txtFile=args.slvTxt)
-	rdp_dict = Preprocess(fastaFile=args.rdpFasta, txtFile=args.rdpTxt)
+	gg_dict = Preprocess(fastaFile=args.ggFasta, txtFile=args.ggTaxa)
+	slv_dict = Preprocess(fastaFile=args.slvFasta, txtFile=args.slvTaxa)
+	rdp_dict = Preprocess(fastaFile=args.rdpFasta, txtFile=args.rdpTaxa)
 
 	# Change this order if needed
 	addin_slv, replace_slv, RSIDB = integrateDB(slv_dict, rdp_dict)
