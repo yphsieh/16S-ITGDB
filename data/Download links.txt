@@ -6,4 +6,4 @@ Sequence-based ITGDB: seq_itgdb_seq.fasta (sequence file) and seq_itgdb_taxa.txt
 
 Click the following link to download the 16S-ITGDBs.
 
-Download link: https://drive.google.com/drive/u/1/folders/1UVRXhawL95a8kiBrPxpH-kTbfJWr3Oq4
+Download link: (https://drive.google.com/drive/u/1/folders/1UVRXhawL95a8kiBrPxpH-kTbfJWr3Oq4)
