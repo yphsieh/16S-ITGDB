@@ -1,15 +1,14 @@
 # ItgDB
-The integration codes are in ```src```
+The integration codes are in ```src```.
 
-## Sequence Integration
-To generate Seq_ItgDB, please run:
+Generally, to generate ItgDB, please run:
 ```
-python seq_integration.py --name <default: Seq_ItgDB>
+ python main.py <task> 	--out <default: ItgDB>
 			--ggFasta <Greengenes sequence file> 	--ggTaxa <Greengenes taxonomy file>
 			--slvFasta <SILVA sequence file>	--slvTaxa <SILVA taxonomy file>
 			--rdpFasta <RDP sequence file> 		--rdpTaxa <RDP taxonomy file> 
 ```
-Notice that this generates Seq_ItgDB by replacing and adding sequences from SILVA and Greengenes to RDP, orderly.
-To change the integration order, please modify line 167 and 168 in ```sequence_integration.py```.
+The ```<task>``` can either be "seq" or "taxa" to generate sequence-based ItgDB or taxa-based ItgDB.
 
-## Taxonomy Integration
+Notice that this generates Seq_ItgDB by replacing and adding sequences from SILVA and Greengenes to RDP, orderly.
+To change the integration order for sequence-based ItgDB, please modify line 30 and 31 in ```main.py```.
