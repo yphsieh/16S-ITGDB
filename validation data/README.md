@@ -1,9 +1,13 @@
-# ItgDB
-The following link contains the files of taxonomy-based ITGDB and sequence-based ITGDB. Each ITGDB has two files - sequence file and taxonomy file:
+# Validation Dataset
+The following link contains the files of five validation datasets. Each dataset has two files - sequence file and taxonomy file:
 
-Taxonomy-based ITGDB: taxa_itgdb_seq.fasta (sequence file) and taxa_itgdb_taxa.txt (taxonomy file)
-Sequence-based ITGDB: seq_itgdb_seq.fasta (sequence file) and seq_itgdb_taxa.txt (taxonomy file)
+16S-UDb: 16s-udb_seq.fasta (sequence file) and 16s-udb_taxa.txt (taxonomy file)
+Union: union_seq.fasta (sequence file) and union_taxa.txt (taxonomy file)
+Less-3-overlap: less-3-overlap_seq.fasta (sequence file) and less-3-overlap_taxa.txt (taxonomy file)
+Intersection: intersection_seq.fasta (sequence file) and intersection_taxa.txt (taxonomy file)
+Exclusion: exclusion_seq.fasta (sequence file) and exclusion_taxa.txt (taxonomy file)
 
-Click the following link to download the 16S-ITGDBs.
+Click the following link to download the datasets.
 
-Download link: https://drive.google.com/drive/folders/1UVRXhawL95a8kiBrPxpH-kTbfJWr3Oq4?usp=sharing
+Download link: https://drive.google.com/drive/folders/1W9XQXOif38VwdrUPVrPmoQxLh3G6MxyK?usp=sharing
+
