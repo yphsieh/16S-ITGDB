@@ -1,3 +1,9 @@
-# Dataset for validation
-[Validation dataset](https://drive.google.com/drive/folders/1W9XQXOif38VwdrUPVrPmoQxLh3G6MxyK?usp=sharing) contain the five dataset for validation. 
+# ItgDB
+The following link contains the files of taxonomy-based ITGDB and sequence-based ITGDB. Each ITGDB has two files - sequence file and taxonomy file:
 
+Taxonomy-based ITGDB: taxa_itgdb_seq.fasta (sequence file) and taxa_itgdb_taxa.txt (taxonomy file)
+Sequence-based ITGDB: seq_itgdb_seq.fasta (sequence file) and seq_itgdb_taxa.txt (taxonomy file)
+
+Click the following link to download the 16S-ITGDBs.
+
+Download link: https://drive.google.com/drive/folders/1UVRXhawL95a8kiBrPxpH-kTbfJWr3Oq4?usp=sharing
