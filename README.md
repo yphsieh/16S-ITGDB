@@ -18,16 +18,17 @@ There are five datasets for validation provided in ```validation data/```.
 Two files are provided for each 16S-ITGDB and validation dataset, including a sequence file and a taxonomy file. Sequence files are provided in FASTA formats and named with ```*_seq.txt```, and taxonomy files are provided in TXT formats and named with ```*_taxa.txt```.
 
 In each sequence file, each sequence follows its seuqence ID. For example, in the following picture, ```AJ000684``` and ```EF599163``` are the seuqence IDs and followed by their corresponding sequences.
+
 <img width="1057" alt="Screen Shot 2021-09-03 at 9 46 28 AM" src="https://user-images.githubusercontent.com/47639979/131938695-b98a4a4b-2040-4985-a507-8fcb8ae825df.png">
 
 In each taxonomy file, each ID and its corresponding taxonomy are separated with a tabular key. We can indicate the taxonomies of ```AJ000684``` and ```EF599163``` from the following picture.
+
 <img width="988" alt="Screen Shot 2021-09-03 at 9 47 13 AM" src="https://user-images.githubusercontent.com/47639979/131938704-5d3b3e9f-b637-4358-bc6f-79f2c199c048.png">
 
-### QIIME2 and mothur
-These files are all compatilble with QIIME2 and mothur. Therefore, we can directly serve them as the input to QIIME2 and mothur.
+### QIIME2, SPINGO, and mothur
+These files are all compatilble with QIIME2, SPINGO and mothur. Therefore, we can directly serve them as the input to QIIME2, SPINGO, and mothur.
 
 ### SINTAX
 SINTAX algorithms requires a single FASTA file containing both taxonomy and sequence information. By simply combining the sequence and taxonomy files into a sintax compatible file, we can input the FASTA file into SINTAX. The required file is as below, where each ID is followed by ```;tax=``` indicating the corresponding taxonomy.
-<img width="1037" alt="Screen Shot 2021-09-03 at 10 02 52 AM" src="https://user-images.githubusercontent.com/47639979/131939495-8c3a85ec-4c04-473c-82b1-f817c42f97c9.png">
 
-### SPINGO
+<img width="1037" alt="Screen Shot 2021-09-03 at 10 02 52 AM" src="https://user-images.githubusercontent.com/47639979/131939495-8c3a85ec-4c04-473c-82b1-f817c42f97c9.png">
