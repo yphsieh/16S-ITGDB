@@ -15,6 +15,7 @@ There are some shortcomings of the databases. Greengenes has fewer sequences wit
 The sequence-based and taxonomy-based ITGDBs are provided in ```data/```.
 There are five datasets for validation provided in ```validation data/```.
 
-Two files are provided for each 16S-ITGDB and validation dataset, including a sequence file and a taxonomy file. The file names end with ```_seq``` and ```_taxa```, respectively.
+Two files are provided for each 16S-ITGDB and validation dataset, including a sequence file and a taxonomy file. Sequence files are provided in FASTA format and named with ```*_seq.txt```, and taxonomy files are provided in TXT format and named with ```*_taxa.txt```.
+In each sequence file, there
 
 
