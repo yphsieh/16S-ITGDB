@@ -6,7 +6,7 @@ We proposed two types of integrations, including sequence-based and taxonomy-bas
 Seq_ItgDB and Taxa_ItgDB can both be regenerated when either RDP, SILVA, or Greengenes is updated.
 
 ## Sequence-based ITGDB
-With the rapid advancement of third-generation sequencing (TGS), 16S full-length provides opportunities for us to access deeper taxonomic levels (e.g., species level). Sequence-based ITGDB was developed by integrating all the unique sequences of RDP, SILVA, and Greengenes.
+Sequence-based ITGDB integrates all the unique sequences from RDP, SILVA, and Greengenes without limiting the collected sequences need to have exact species names (No taxonomic depth limitation).
 
 ## Taxonomy-based ITGDB
 There are some shortcomings of the databases. Greengenes has fewer sequences with species information since it has not been updated since 2013. Additionally, both of Greengenes and SILVA contain one fifth anomalies, while RDP has fewer anomalies. To resolve these issues, the sequences with no specific species information are firstly cleansed out from the databases. Then, Taxonomy-based ITGDB is integrated from the cleansed databases.
