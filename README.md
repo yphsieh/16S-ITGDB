@@ -15,13 +15,13 @@ Taxonomy-based ITGDB integrates the sequences based on their taxonomies. All the
 The sequence-based and taxonomy-based ITGDBs are in ```data/``` directory.
 The validation datasets are in ```validation data/``` directory.
 
-Two files are provided for each 16S-ITGDB and validation dataset, including a sequence file and a taxonomy file. Sequence files are provided in FASTA formats and named with ```*_seq.txt```, and taxonomy files are provided in TXT formats and named with ```*_taxa.txt```.
+Two files are provided for each 16S-ITGDB and validation dataset, including a sequence file and a taxonomy file. Sequence files are in FASTA formats (named as ```*_seq.fasta```), and the extension of taxonomy files are "txt" (named as ```*_taxa.txt```).
 
-In each sequence file, each sequence follows its seuqence ID. For example, in the following picture, ```AJ000684``` and ```EF599163``` are the seuqence IDs and followed by their corresponding sequences.
+In sequence files, each sequence has its seuqence ID and accompanied with its corresponding sequence. For example, in the following picture, ```AJ000684``` and ```EF599163``` are the seuqence IDs and followed by their corresponding sequences.
 
 <img width="1057" alt="Screen Shot 2021-09-03 at 9 46 28 AM" src="https://user-images.githubusercontent.com/47639979/131938695-b98a4a4b-2040-4985-a507-8fcb8ae825df.png">
 
-In each taxonomy file, each ID and its corresponding taxonomy are separated with a tabular key. We can indicate the taxonomies of ```AJ000684``` and ```EF599163``` from the following picture.
+In taxonomy files, each ID and its corresponding taxonomy is separated by a tab key. The corresponding taxonomies of ```AJ000684``` and ```EF599163``` are shown the following picture.
 
 <img width="988" alt="Screen Shot 2021-09-03 at 9 47 13 AM" src="https://user-images.githubusercontent.com/47639979/131938704-5d3b3e9f-b637-4358-bc6f-79f2c199c048.png">
 
