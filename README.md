@@ -33,15 +33,15 @@ SINTAX algorithms requires a single FASTA file containing both taxonomy and sequ
 <img width="1037" alt="Screen Shot 2021-09-03 at 10 02 52 AM" src="https://user-images.githubusercontent.com/47639979/131939495-8c3a85ec-4c04-473c-82b1-f817c42f97c9.png">
 
 ### SPINGO
-SPINGO tutorial
+[[[SPINGO tutorial]]]
 
 
 ### Mothur classifier
-Mothur tutorial
+[[[Mothur tutorial]]]
 
 ### QIIME2 classifier
-The trained QIIME2 artifacts are in ```data``` directory (seq_itgdb.qza and taxa_itgdb.qza). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage is shown below.
+The trained QIIME2 artifacts are in ```data``` directory (seq_itgdb.qza and taxa_itgdb.qza). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage is shown below.[[[tutorial]]]
 
 ### Integrate the newly released RDP, SILVA, and Greengenes
-Here shows how to use the source code to integrate the newly released RDP, SILVA and Greengenes.
+Here shows how to use the source code to integrate the newly released RDP, SILVA and Greengenes. [[[tutorial]]]
 
