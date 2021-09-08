@@ -41,6 +41,8 @@ Taxonomy-based ITGDB is suggested for 16S full-length classification. The follow
 
 ### Mothur classifier
 [[[Mothur tutorial]]]
+[[[Upload the organized Mothur files]]]
+[[[Give command pattern and usage example]]]
 
 ### QIIME2 classifier
 The trained QIIME2 artifacts are in ```data``` directory (seq_itgdb.qza and taxa_itgdb.qza). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage is shown below.[[[tutorial]]]
