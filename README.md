@@ -28,26 +28,26 @@ In taxonomy files, each ID and its corresponding taxonomy is separated by a tab 
 Taxonomy-based ITGDB is suggested for 16S full-length classification. The following content shows how to use ITGDBs in SINTAX, SPINGO, Mothur, and QIIME2 classifiers.
 
 ### SINTAX
-[[[Upload the organized SINTAX files -  taxa_itgdb]]]
+[[[Upload the organized SINTAX files -  taxa_itgdb]]]<br/>
 [[[Give command line pattern and usage example. The usage example could apply the "intersection" validation dataset]]]
 
 <img width="1037" alt="Screen Shot 2021-09-03 at 10 02 52 AM" src="https://user-images.githubusercontent.com/47639979/131939495-8c3a85ec-4c04-473c-82b1-f817c42f97c9.png">
 
 ### SPINGO
-[[[SPINGO tutorial]]]
-[[[Upload the organized SPINGO files]]]
+[[[SPINGO tutorial]]]<br/>
+[[[Upload the organized SPINGO files]]]<br/>
 [[[Give command pattern and usage example]]]
 
 
 ### Mothur classifier
-[[[Mothur tutorial]]]
-[[[Upload the organized Mothur files]]]
+[[[Mothur tutorial]]]<br/>
+[[[Upload the organized Mothur files]]]<br/>
 [[[Give command pattern and usage example]]]
 
 ### QIIME2 classifier
-The trained QIIME2 artifacts are in ```data``` directory (seq_itgdb.qza and taxa_itgdb.qza). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage is shown below.[[[tutorial]]]
+The trained QIIME2 artifacts are in ```data``` directory (seq_itgdb.qza and taxa_itgdb.qza). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage is shown below.[[[tutorial]]]<br/>
 
-[[[Upload *.qza files]]]
+[[[Upload *.qza files]]]<br/>
 [[[Give command pattern and usage example]]]
 
 ### Integrate the newly released RDP, SILVA, and Greengenes
