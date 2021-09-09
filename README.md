@@ -34,7 +34,7 @@ Taxonomy-based ITGDB is suggested for 16S full-length classification. The follow
 <img width="1037" alt="Screen Shot 2021-09-03 at 10 02 52 AM" src="https://user-images.githubusercontent.com/47639979/131939495-8c3a85ec-4c04-473c-82b1-f817c42f97c9.png">
 
 ### SPINGO
-<span data-color="red">[[[SPINGO tutorial]]]</span><br/>
+[[[SPINGO tutorial]]]<br/>
 [[[Upload the organized SPINGO files]]]<br/>
 [[[Give command pattern and usage example]]]
 
