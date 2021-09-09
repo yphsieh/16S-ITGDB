@@ -11,7 +11,7 @@ Sequence-based ITGDB integrates all the unique sequences from RDP, SILVA, and Gr
 ## Taxonomy-based ITGDB
 Taxonomy-based ITGDB integrates the sequences based on their taxonomies. All the taxonomies of RDP, SILVA, and Greengenes were taken into consideration and all the collected sequences had exact species names. Taxonomy-based ITGDB was suggested for 16S full-length classification. 
 
-## Usage
+## File format explanation
 The sequence-based and taxonomy-based ITGDBs are in ```data/``` directory.
 The validation datasets are in ```validation data/``` directory.
 
@@ -25,6 +25,7 @@ In taxonomy files, each ID and its corresponding taxonomy is separated by a tab 
 
 <img width="988" alt="Screen Shot 2021-09-03 at 9 47 13 AM" src="https://user-images.githubusercontent.com/47639979/131938704-5d3b3e9f-b637-4358-bc6f-79f2c199c048.png">
 
+## Usage
 Taxonomy-based ITGDB is suggested for 16S full-length classification. The following content shows how to use ITGDBs in SINTAX, SPINGO, Mothur, and QIIME2 classifiers.
 
 ### SINTAX
