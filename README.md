@@ -29,16 +29,21 @@ In taxonomy files, each ID and its corresponding taxonomy is separated by a tab 
 Taxonomy-based ITGDB is suggested for 16S full-length classification. The following content shows how to use ITGDBs in SINTAX, SPINGO, Mothur, and QIIME2 classifiers.
 
 ### SINTAX
-[[[Upload the organized SINTAX files -  taxa_itgdb]]]<br/>
-[[[Give command line pattern and usage example. The usage example could apply the "intersection" validation dataset]]]
-
+To serve as the reference database in SINTAX algorithms, the taxonomy and sequence files should be combined and converted into a ```UDB``` file in the following format:
 <img width="1037" alt="Screen Shot 2021-09-03 at 10 02 52 AM" src="https://user-images.githubusercontent.com/47639979/131939495-8c3a85ec-4c04-473c-82b1-f817c42f97c9.png">
+The converted taxonomy-based integrated database is provided as ```taxa_itgdb.udb``` in ```data/``` directory.
+
+Then, we used the following command to assign taxonomies:
+```./usearch11.0.667_i86linux32 -sintax <input file> -db <reference database> -tabbedout <output file> -strand <plus/both> -sintax_cutoff <bootstrap cutoff>```
+For example, to assign the taxonomies of the ```Intersection``` dataset, we used:
+```./usearch11.0.667_i86linux32 -sintax ./intersect.fasta -db taxa_itgdb.udb -tabbedout taxa_itgdb_taxonomy_intersect.sintax -strand both -sintax_cutoff 0.8```
+Detailed tutorials can be found in: https://www.drive5.com/usearch/manual/cmd_sintax.html.
+
 
 ### SPINGO
-[[[SPINGO tutorial]]]<br/>
-[[[Upload the organized SPINGO files]]]<br/>
-[[[Give command pattern and usage example]]]
-
+SPINGO requires a species specific database. We provided ```taxa_itgdb_spingo.fa``` in ```data/``` directory as the species specific database. The reference database is converted internally to an efficient indexed structure. To reuse the index, ```--write-index``` option is used. For instance, in this study, we used
+```./spingo --write-index -p 48 -d database/taxa_itgdb_spingo.fa -i intersect_seq.fasta > spingo_intersect_itgdb_results.tsv```
+to assign the taxonomies of the ```Intersection``` dataset.<br/>
 
 ### Mothur classifier
 [[[Mothur tutorial]]]<br/>
