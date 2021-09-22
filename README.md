@@ -59,9 +59,16 @@ to assign the taxonomies of the sequences in the ```Intersection``` dataset. <br
 Detailed descriptions are in: https://github.com/GuyAllard/SPINGO.<br/>
 
 ### Mothur classifier
-[[[Mothur tutorial]]]<br/>
-[[[Upload the organized Mothur files]]]<br/>
-[[[Give command pattern and usage example]]]
+The classify.seqs command uses reference files to assign the taxonomies of the sequences in your fasta file.
+```
+mothur > classify.seqs(fasta=<input file>, reference=<sequence file of the reference database>, taxonomy=<taxonomy file of the reference database>, methods=<wang/knn>, cutoff=<bootstrap cutoff>)
+```
+We used the command to generate the results of ```Intersection``` dataset:
+```
+mothur > classify.seqs(fasta=intersect_seq.fasta, reference=taxa_itgdb_seq.fasta, taxonomy=taxa_itgdb_taxa.txt, methods=wang, cutoff=0)
+```
+mothur will output two files from the classify.seqs command: a *.taxonomy file which contains a taxonomy string for each sequence and a *.tax.summary file which contains a taxonomic outline indicating the number of sequences that were found for your collection at each level.<br/>
+Detailed usage can be found in: https://mothur.org/wiki/classify.seqs/.
 
 ### QIIME2 classifier
 The trained QIIME2 artifacts are in ```data``` directory (seq_itgdb.qza and taxa_itgdb.qza). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage is shown below.[[[tutorial]]]<br/>
