@@ -73,8 +73,9 @@ Detailed usage can be found in: https://mothur.org/wiki/classify.seqs/.
 ### QIIME2 classifier
 The trained QIIME2 artifacts are in ```data``` directory (seq_itgdb.qza and taxa_itgdb.qza). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage is shown below.
 ```
+# import the input file as a QIIME2 artifact
 qiime tools import --type 'FeatureData[Sequence]' --input-path <input file> --output-path <input QIIME2 artifact>
-
+# taxonomic assignment
 qiime feature-classifier classify-sklearn --i-classifier <trained QIIME2 artifact> --i-reads <input QIIME2 artifact> --o-classification <output QIIME2 artifact>
 ```
 The output file is a ```*.qza``` file, which can be exported to ```taxonomy.tsv``` by:
@@ -91,7 +92,18 @@ qiime tools export --input-path qiime2_intersect_itgdb_results.qza --output-path
 
 mv taxonomy.tsv qiime2_intersect_itgdb_results.tsv
 ```
+Detailed tutorials of QIIME2 usage are in : https://docs.qiime2.org/2021.8/tutorials/. <br/>
 
 ### Integrate the newly released RDP, SILVA, and Greengenes
-Here shows how to use the source code to integrate the newly released RDP, SILVA and Greengenes. [[[tutorial]]]
+Here shows how to use the source code to integrate the newly released RDP, SILVA and Greengenes. The integration codes are in ```src```. In general, to generate ItgDB, please run:
+```
+python main.py --task <seq/taxa>       --out <default: ItgDB>
+               --ggFasta <Greengenes sequence file>    --ggTaxa <Greengenes taxonomy file>
+               --slvFasta <SILVA sequence file>        --slvTaxa <SILVA taxonomy file>
+               --rdpFasta <RDP sequence file>          --rdpTaxa <RDP taxonomy file>
+```
+The ```--task``` can either be "seq" or "taxa" to generate sequence-based ItgDB or taxa-based ItgDB.<br/>
+
+Notice that this generates Seq_ItgDB by replacing and adding sequences from SILVA and Greengenes to RDP, orderly.<br/>
+To change the integration order for sequence-based ItgDB, please modify line 30 and 31 in ```main.py```.
 
