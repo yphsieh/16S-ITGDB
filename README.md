@@ -39,15 +39,18 @@ Then, we used the following command to assign taxonomies:<br/>
 ```
 For example, to assign the taxonomies of the ```Intersection``` dataset, we used:<br/>
 ```
-./usearch11.0.667_i86linux32 -sintax ./intersect.fasta -db taxa_itgdb.udb -tabbedout taxa_itgdb_taxonomy_intersect.sintax -strand both -sintax_cutoff 0.8
+./usearch11.0.667_i86linux32 -sintax intersect_seq.fasta -db taxa_itgdb.udb -tabbedout sintax_intersect_itgdb_results.tsv -strand both -sintax_cutoff 0.8
 ```
 Detailed tutorials can be found in: https://www.drive5.com/usearch/manual/cmd_sintax.html.<br/>
 
 
 ### SPINGO
 SPINGO requires a species specific database. We provided ```taxa_itgdb_spingo.fa``` in ```data/``` directory as the species specific database. The reference database is converted internally to an efficient indexed structure. To reuse the index, ```--write-index``` option is used. For instance, in this study, we used
-```./spingo --write-index -p 48 -d database/taxa_itgdb_spingo.fa -i intersect_seq.fasta > spingo_intersect_itgdb_results.tsv```
+```
+./spingo --write-index -p 48 -d database/taxa_itgdb_spingo.fa -i intersect_seq.fasta > spingo_intersect_itgdb_results.tsv
+```
 to assign the taxonomies of the ```Intersection``` dataset.<br/>
+Detailed descriptions are in: https://github.com/GuyAllard/SPINGO.
 
 ### Mothur classifier
 [[[Mothur tutorial]]]<br/>
