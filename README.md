@@ -29,15 +29,15 @@ In taxonomy files, each ID and its corresponding taxonomy is separated by a tab 
 Taxonomy-based ITGDB is suggested for 16S full-length classification. The following content shows how to use ITGDBs in SINTAX, SPINGO, Mothur, and QIIME2 classifiers.
 
 ### SINTAX
-To serve as the reference database in SINTAX algorithms, the taxonomy and sequence files should be combined and converted into a ```UDB``` file in the following format:
-<img width="1037" alt="Screen Shot 2021-09-03 at 10 02 52 AM" src="https://user-images.githubusercontent.com/47639979/131939495-8c3a85ec-4c04-473c-82b1-f817c42f97c9.png">
-The converted taxonomy-based integrated database is provided as ```taxa_itgdb.udb``` in ```data/``` directory.
+To serve as the reference database in SINTAX algorithms, the taxonomy and sequence files should be combined and converted into a ```UDB``` file in the following format:<br/>
+<img width="1037" alt="Screen Shot 2021-09-03 at 10 02 52 AM" src="https://user-images.githubusercontent.com/47639979/131939495-8c3a85ec-4c04-473c-82b1-f817c42f97c9.png"><br/>
+The converted taxonomy-based integrated database is provided as ```taxa_itgdb.udb``` in ```data/``` directory.<br/>
 
-Then, we used the following command to assign taxonomies:
-```./usearch11.0.667_i86linux32 -sintax <input file> -db <reference database> -tabbedout <output file> -strand <plus/both> -sintax_cutoff <bootstrap cutoff>```
-For example, to assign the taxonomies of the ```Intersection``` dataset, we used:
-```./usearch11.0.667_i86linux32 -sintax ./intersect.fasta -db taxa_itgdb.udb -tabbedout taxa_itgdb_taxonomy_intersect.sintax -strand both -sintax_cutoff 0.8```
-Detailed tutorials can be found in: https://www.drive5.com/usearch/manual/cmd_sintax.html.
+Then, we used the following command to assign taxonomies:<br/>
+```./usearch11.0.667_i86linux32 -sintax <input file> -db <reference database> -tabbedout <output file> -strand <plus/both> -sintax_cutoff <bootstrap cutoff>```<br/>
+For example, to assign the taxonomies of the ```Intersection``` dataset, we used:<br/>
+```./usearch11.0.667_i86linux32 -sintax ./intersect.fasta -db taxa_itgdb.udb -tabbedout taxa_itgdb_taxonomy_intersect.sintax -strand both -sintax_cutoff 0.8```<br/>
+Detailed tutorials can be found in: https://www.drive5.com/usearch/manual/cmd_sintax.html.<br/>
 
 
 ### SPINGO
