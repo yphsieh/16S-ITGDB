@@ -34,9 +34,13 @@ To serve as the reference database in SINTAX algorithms, the taxonomy and sequen
 The converted taxonomy-based integrated database is provided as ```taxa_itgdb.udb``` in ```data/``` directory.<br/>
 
 Then, we used the following command to assign taxonomies:<br/>
-```./usearch11.0.667_i86linux32 -sintax <input file> -db <reference database> -tabbedout <output file> -strand <plus/both> -sintax_cutoff <bootstrap cutoff>```<br/>
+```
+./usearch11.0.667_i86linux32 -sintax <input file> -db <reference database> -tabbedout <output file> -strand <plus/both> -sintax_cutoff <bootstrap cutoff>
+```
 For example, to assign the taxonomies of the ```Intersection``` dataset, we used:<br/>
-```./usearch11.0.667_i86linux32 -sintax ./intersect.fasta -db taxa_itgdb.udb -tabbedout taxa_itgdb_taxonomy_intersect.sintax -strand both -sintax_cutoff 0.8```<br/>
+```
+./usearch11.0.667_i86linux32 -sintax ./intersect.fasta -db taxa_itgdb.udb -tabbedout taxa_itgdb_taxonomy_intersect.sintax -strand both -sintax_cutoff 0.8
+```
 Detailed tutorials can be found in: https://www.drive5.com/usearch/manual/cmd_sintax.html.<br/>
 
 
