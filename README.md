@@ -63,18 +63,34 @@ The classify.seqs command uses reference files to assign the taxonomies of the s
 ```
 mothur > classify.seqs(fasta=<input file>, reference=<sequence file of the reference database>, taxonomy=<taxonomy file of the reference database>, methods=<wang/knn>, cutoff=<bootstrap cutoff>)
 ```
-We used the command to generate the results of ```Intersection``` dataset:
+mothur will output two files from the classify.seqs command: a ```*.taxonomy``` file which contains a taxonomy string for each sequence, and a ```*.tax.summary``` file which contains a taxonomic outline indicating the number of sequences that were found for your collection at each level.<br/>
+Our proposed ITGDB is compatible with mothur. We used the command to generate the results of ```Intersection``` dataset:
 ```
 mothur > classify.seqs(fasta=intersect_seq.fasta, reference=taxa_itgdb_seq.fasta, taxonomy=taxa_itgdb_taxa.txt, methods=wang, cutoff=0)
 ```
-mothur will output two files from the classify.seqs command: a *.taxonomy file which contains a taxonomy string for each sequence and a *.tax.summary file which contains a taxonomic outline indicating the number of sequences that were found for your collection at each level.<br/>
 Detailed usage can be found in: https://mothur.org/wiki/classify.seqs/.
 
 ### QIIME2 classifier
-The trained QIIME2 artifacts are in ```data``` directory (seq_itgdb.qza and taxa_itgdb.qza). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage is shown below.[[[tutorial]]]<br/>
+The trained QIIME2 artifacts are in ```data``` directory (seq_itgdb.qza and taxa_itgdb.qza). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage is shown below.
+```
+qiime tools import --type 'FeatureData[Sequence]' --input-path <input file> --output-path <input QIIME2 artifact>
 
-[[[Upload *.qza files]]]<br/>
-[[[Give command pattern and usage example]]]
+qiime feature-classifier classify-sklearn --i-classifier <trained QIIME2 artifact> --i-reads <input QIIME2 artifact> --o-classification <output QIIME2 artifact>
+```
+The output file is a ```*.qza``` file, which can be exported to ```taxonomy.tsv``` by:
+```
+qiime tools export --input-path <output file> --output-path ./
+```
+For instance, the commands used to classify the sequences in ```Intersection``` dataset are:
+```
+qiime tools import --type 'FeatureData[Sequence]' --input-path intersect_seq.fasta --output-path intersect_seq.qza
+
+qiime feature-classifier classify-sklearn --i-classifier taxa_itgdb.qza --i-reads intersect_seq.qza --o-classification qiime2_intersect_itgdb_results.qza
+
+qiime tools export --input-path qiime2_intersect_itgdb_results.qza --output-path ./
+
+mv taxonomy.tsv qiime2_intersect_itgdb_results.tsv
+```
 
 ### Integrate the newly released RDP, SILVA, and Greengenes
 Here shows how to use the source code to integrate the newly released RDP, SILVA and Greengenes. [[[tutorial]]]
