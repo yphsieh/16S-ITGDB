@@ -94,16 +94,3 @@ mv taxonomy.tsv qiime2_intersect_itgdb_results.tsv
 ```
 Detailed tutorials of QIIME2 usage are in : https://docs.qiime2.org/2021.8/tutorials/. <br/>
 
-### Integrate the newly released RDP, SILVA, and Greengenes
-Here shows how to use the source code to integrate the newly released RDP, SILVA and Greengenes. The integration codes are in ```src```. In general, to generate ItgDB, please run:
-```
-python main.py --task <seq/taxa>       --out <default: ItgDB>
-               --ggFasta <Greengenes sequence file>    --ggTaxa <Greengenes taxonomy file>
-               --slvFasta <SILVA sequence file>        --slvTaxa <SILVA taxonomy file>
-               --rdpFasta <RDP sequence file>          --rdpTaxa <RDP taxonomy file>
-```
-The ```--task``` can either be "seq" or "taxa" to generate sequence-based ItgDB or taxa-based ItgDB.<br/>
-
-Notice that this generates Seq_ItgDB by replacing and adding sequences from SILVA and Greengenes to RDP, orderly.<br/>
-To change the integration order for sequence-based ItgDB, please modify line 30 and 31 in ```main.py```.
-
