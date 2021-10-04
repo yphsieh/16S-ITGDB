@@ -90,5 +90,5 @@ qiime tools export --input-path qiime2_intersect_itgdb_results.qza --output-path
 
 mv taxonomy.tsv qiime2_intersect_itgdb_results.tsv
 ```
-Detailed tutorials of QIIME2 usage are in : https://docs.qiime2.org/2021.8/tutorials/. <br/>
+Detailed tutorials of QIIME2 usage are in : https://docs.qiime2.org/2020.8/tutorials/. <br/>
 
