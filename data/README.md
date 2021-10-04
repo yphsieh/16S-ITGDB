@@ -6,7 +6,7 @@ Sequence-based ITGDB: ```seq_itgdb_seq.fasta``` (sequence file) and ```seq_itgdb
 
 To be compatible with the SINTAX classifier, ```seq_itgdb.udb``` and ```taxa_itgdb.udb``` are provided.\
 To run with the SPINGO classifier, ```taxa_itgdb_spingo.fa``` is provided.\
-The trained QIIME2 classifier artifact is provided as ```taxa_itgdb_qiime2.qza```.\
+The trained QIIME2 classifier artifact is provided as ```taxa_itgdb_qiime2.qza```.
 
 Click the following link to download the 16S-ITGDBs.\
 
