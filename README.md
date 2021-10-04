@@ -31,7 +31,7 @@ To serve as the reference database in SINTAX algorithms, the taxonomy and sequen
 <img width="1037" alt="Screen Shot 2021-09-03 at 10 02 52 AM" src="https://user-images.githubusercontent.com/47639979/131939495-8c3a85ec-4c04-473c-82b1-f817c42f97c9.png"><br/>
 The converted taxonomy-based integrated database is provided as ```taxa_itgdb.udb``` in ```data/``` directory.<br/>
 
-We assume your SINTAX binary file is named as "usearch", we used the following command to assign taxonomies:<br/>
+We assume your SINTAX execution(binary) file is named as "usearch", we used the following command to assign taxonomies:<br/>
 ```
 ./usearch -sintax <input file> -db <reference database> -tabbedout <output file> -strand <plus/both> -sintax_cutoff <bootstrap cutoff>
 ```
