@@ -59,7 +59,7 @@ Detailed descriptions are in: https://github.com/GuyAllard/SPINGO.<br/>
 ### Mothur classifier
 The classify.seqs command uses reference files to assign the taxonomies of the sequences in your fasta file.
 ```
-mothur > classify.seqs(fasta=<input file>, reference=<sequence file of the reference database>, taxonomy=<taxonomy file of the reference database>, methods=<wang/knn>, cutoff=<bootstrap cutoff>)
+mothur > classify.seqs(fasta=<input file>, reference=<sequence file of the reference database>, taxonomy=<taxonomy file of the reference database>, methods=<wang>, cutoff=<bootstrap cutoff>)
 ```
 mothur will output two files from the classify.seqs command: a ```*.taxonomy``` file which contains a taxonomy string for each sequence, and a ```*.tax.summary``` file which contains a taxonomic outline indicating the number of sequences that were found for your collection at each level.<br/>
 Our proposed ITGDB is compatible with mothur. We used the command to generate the results of ```Intersection``` dataset:
