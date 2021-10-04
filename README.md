@@ -3,8 +3,6 @@
 
 We proposed two types of integrations, including sequence-based and taxonomy-based ITGDB. Both of them are currently integrated from RDP (version NO18), SILVA (version 138), and Greengenes (version 13_8) OTU clustering databases with 99% of sequence similarity. 
 
-Seq_ItgDB and Taxa_ItgDB can both be regenerated when either RDP, SILVA, or Greengenes is updated.
-
 ## Sequence-based ITGDB
 Sequence-based ITGDB integrates all the unique sequences from RDP, SILVA, and Greengenes without limiting the collected sequences need to have exact species names (no taxonomic depth limitation).
 
