@@ -8,6 +8,6 @@ To be compatible with the SINTAX classifier, ```seq_itgdb.udb``` and ```taxa_itg
 To run with the SPINGO classifier, ```taxa_itgdb_spingo.fa``` is provided.\
 The trained QIIME2 classifier artifact is provided as ```taxa_itgdb_qiime2.qza```.
 
-Click the following link to download the 16S-ITGDBs.\
+Click the following link to download the 16S-ITGDBs.
 
 Download link: https://drive.google.com/drive/folders/1UVRXhawL95a8kiBrPxpH-kTbfJWr3Oq4?usp=sharing
