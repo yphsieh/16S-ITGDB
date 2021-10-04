@@ -11,7 +11,7 @@ Taxonomy-based ITGDB integrates the sequences based on their taxonomies. All the
 
 ## File format explanation
 The sequence-based and taxonomy-based ITGDBs are in ```data/``` directory.
-The validation datasets are in ```validation data/``` directory.
+The validation datasets are in ```test cases/``` directory.
 
 Two files are provided for each 16S-ITGDB and validation dataset, including a sequence file and a taxonomy file. Sequence files are in FASTA formats (named as ```*_seq.fasta```), and the extension of taxonomy files are "txt" (named as ```*_taxa.txt```).
 
@@ -57,14 +57,14 @@ to assign the taxonomies of the sequences in the ```Intersection``` dataset. <br
 Detailed descriptions are in: https://github.com/GuyAllard/SPINGO.<br/>
 
 ### Mothur classifier
-The classify.seqs command uses reference files to assign the taxonomies of the sequences in your fasta file with designated number of processors.
+The classify.seqs command uses reference files to assign the taxonomies of the sequences in your fasta file with designated number of processors. The taxonomy file compatible with mothur classifier is provided as `taxa_itgdb_taxa_mothur.txt` in `data/`.
 ```
 mothur > classify.seqs(fasta=<input file>, processors=<number of processors>, reference=<sequence file of the reference database>, taxonomy=<taxonomy file of the reference database>, methods=<wang>, cutoff=<bootstrap cutoff>)
 ```
 mothur will output two files from the classify.seqs command: a ```*.taxonomy``` file which contains a taxonomy string for each sequence, and a ```*.tax.summary``` file which contains a taxonomic outline indicating the number of sequences that were found for your collection at each level.<br/>
 Our proposed ITGDB is compatible with mothur. We used the command to generate the results of ```Intersection``` dataset:
 ```
-mothur > classify.seqs(fasta=intersect_seq.fasta, processors=8, reference=taxa_itgdb_seq.fasta, taxonomy=taxa_itgdb_taxa.txt, methods=wang, cutoff=0)
+mothur > classify.seqs(fasta=intersect_seq.fasta, processors=8, reference=taxa_itgdb_seq.fasta, taxonomy=taxa_itgdb_taxa_mothur.txt, methods=wang, cutoff=0)
 ```
 Detailed usage can be found in: https://mothur.org/wiki/classify.seqs/.
 
