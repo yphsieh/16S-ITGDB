@@ -35,9 +35,9 @@ We assume your SINTAX execution(binary) file is named as "usearch" and use 8 pro
 ```
 ./usearch -sintax <input file> -db <reference database> -tabbedout <output file> -strand <plus/both> -sintax_cutoff <bootstrap cutoff> -threads <threads number>
 ```
-For example, to assign the taxonomies of the ```Intersection``` dataset, we used:<br/>
+As previously suggested, the cut-off is deactivated by setting bootstrap cutoff as 0. For example, to assign the taxonomies of the ```Intersection``` dataset, we used:<br/>
 ```
-./usearch -sintax intersect_seq.fasta -db taxa_itgdb.udb -tabbedout sintax_intersect_itgdb_results.tsv -strand both -sintax_cutoff 0.8 -threads 8
+./usearch -sintax intersect_seq.fasta -db taxa_itgdb.udb -tabbedout sintax_intersect_itgdb_results.tsv -strand both -sintax_cutoff 0 -threads 8
 ```
 Detailed tutorials can be found in: https://www.drive5.com/usearch/manual/cmd_sintax.html.<br/>
 
@@ -45,7 +45,7 @@ Detailed tutorials can be found in: https://www.drive5.com/usearch/manual/cmd_si
 SPINGO requires a species specific database in the following format: <br/>
 <img width="1217" alt="Screen Shot 2021-09-22 at 11 01 45 AM" src="https://user-images.githubusercontent.com/47639979/134276818-8b3ef7b7-f1f0-4eaf-95cd-d289b5e4d9ab.png">
 
-We provided ```taxa_itgdb_spingo.fa``` in ```data/``` directory as the species specific database. The reference database is converted internally to an efficient indexed structure. To reuse the index, ```--write-index``` option is used. SPINGO provides parallel computation. Assume your SPINGO execution file is named as "spingo" and use 8 processors for the program, the utilized command is as follows:
+We provided ```taxa_itgdb_spingo.fa``` in ```data/``` directory as the species specific database. The reference database is converted internally to an efficient indexed structure. To reuse the index, ```--write-index``` option is used. SPINGO provides parallel computation. Assume your SPINGO execution file is named as "spingo", the utilized command is as follows:
 ```
 ./spingo --write-index -p <number of processors> -d <reference database> -i <input file> > <output file>
 ```
@@ -53,7 +53,7 @@ For example, we used the command:
 ```
 ./spingo --write-index -p 8 -d database/taxa_itgdb_spingo.fa -i intersect_seq.fasta > spingo_intersect_itgdb_results.tsv
 ```
-to assign the taxonomies of the sequences in the ```Intersection``` dataset. <br/>
+to assign the taxonomies of the sequences in the ```Intersection``` dataset with 8 processors for the program. <br/>
 Detailed descriptions are in: https://github.com/GuyAllard/SPINGO.<br/>
 
 ### Mothur classifier
@@ -62,7 +62,7 @@ The classify.seqs command uses reference files to assign the taxonomies of the s
 mothur > classify.seqs(fasta=<input file>, processors=<number of processors>, reference=<sequence file of the reference database>, taxonomy=<taxonomy file of the reference database>, methods=<wang>, cutoff=<bootstrap cutoff>)
 ```
 mothur will output two files from the classify.seqs command: a ```*.taxonomy``` file which contains a taxonomy string for each sequence, and a ```*.tax.summary``` file which contains a taxonomic outline indicating the number of sequences that were found for your collection at each level.<br/>
-Our proposed ITGDB is compatible with mothur. We used the following command to assgin taxonomy for ```Intersection``` dataset using 8 processors:
+We used the following command to assgin taxonomy for ```Intersection``` dataset using 8 processors and deactivated cut-off setting (cutoff=0):
 ```
 mothur > classify.seqs(fasta=intersect_seq.fasta, processors=8, reference=taxa_itgdb_seq.fasta, taxonomy=taxa_itgdb_taxa_mothur.txt, methods=wang, cutoff=0)
 ```
