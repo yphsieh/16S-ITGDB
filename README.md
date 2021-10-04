@@ -29,7 +29,7 @@ Taxonomy-based ITGDB is suggested for 16S full-length classification. The follow
 ### SINTAX
 To serve as the reference database in SINTAX algorithms, the taxonomy and sequence files should be combined and converted into a ```UDB``` file in the following format:<br/>
 <img width="1037" alt="Screen Shot 2021-09-03 at 10 02 52 AM" src="https://user-images.githubusercontent.com/47639979/131939495-8c3a85ec-4c04-473c-82b1-f817c42f97c9.png"><br/>
-The converted taxonomy-based integrated database is provided as ```taxa_itgdb.udb``` in ```data/``` directory.<br/>
+The converted sequence-based and taxonomy-based integrated database are provided as ```seq_itgdb.udb``` and ```taxa_itgdb.udb``` in ```data/``` directory.<br/>
 
 We assume your SINTAX execution(binary) file is named as "usearch", we used the following command to assign taxonomies:<br/>
 ```
@@ -69,7 +69,7 @@ mothur > classify.seqs(fasta=intersect_seq.fasta, reference=taxa_itgdb_seq.fasta
 Detailed usage can be found in: https://mothur.org/wiki/classify.seqs/.
 
 ### QIIME2 classifier
-The trained QIIME2 artifacts are in ```data``` directory (seq_itgdb.qza and taxa_itgdb.qza). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage is shown below.
+The trained QIIME2 artifacts are in ```data``` directory (`taxa_itgdb_qiime2.qza`). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage is shown below.
 ```
 # import the input file as a QIIME2 artifact
 qiime tools import --type 'FeatureData[Sequence]' --input-path <input file> --output-path <input QIIME2 artifact>
