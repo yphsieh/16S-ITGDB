@@ -69,7 +69,7 @@ mothur > classify.seqs(fasta=intersect_seq.fasta, reference=taxa_itgdb_seq.fasta
 Detailed usage can be found in: https://mothur.org/wiki/classify.seqs/.
 
 ### QIIME2 classifier
-The trained QIIME2 artifacts are in ```data``` directory (`taxa_itgdb_qiime2.qza`). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage is shown below.
+The trained QIIME2 artifact is in ```data/``` directory (`taxa_itgdb_qiime2.qza`). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage is shown below.
 ```
 # import the input file as a QIIME2 artifact
 qiime tools import --type 'FeatureData[Sequence]' --input-path <input file> --output-path <input QIIME2 artifact>
