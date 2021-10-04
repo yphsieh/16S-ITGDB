@@ -31,7 +31,7 @@ To serve as the reference database in SINTAX algorithms, the taxonomy and sequen
 <img width="1037" alt="Screen Shot 2021-09-03 at 10 02 52 AM" src="https://user-images.githubusercontent.com/47639979/131939495-8c3a85ec-4c04-473c-82b1-f817c42f97c9.png"><br/>
 The converted sequence-based and taxonomy-based integrated database are provided as ```seq_itgdb.udb``` and ```taxa_itgdb.udb``` in ```data/``` directory.<br/>
 
-We assume your SINTAX execution(binary) file is named as "usearch" and use 8 threads for parallel computation, the following command is used to assign taxonomies:<br/>
+We assume your SINTAX execution(binary) file is named as "usearch" and use 8 processors(threads) for parallel computation, the following command is used to assign taxonomies:<br/>
 ```
 ./usearch -sintax <input file> -db <reference database> -tabbedout <output file> -strand <plus/both> -sintax_cutoff <bootstrap cutoff> -threads <threads number>
 ```
@@ -62,7 +62,7 @@ The classify.seqs command uses reference files to assign the taxonomies of the s
 mothur > classify.seqs(fasta=<input file>, processors=<number of processors>, reference=<sequence file of the reference database>, taxonomy=<taxonomy file of the reference database>, methods=<wang>, cutoff=<bootstrap cutoff>)
 ```
 mothur will output two files from the classify.seqs command: a ```*.taxonomy``` file which contains a taxonomy string for each sequence, and a ```*.tax.summary``` file which contains a taxonomic outline indicating the number of sequences that were found for your collection at each level.<br/>
-Our proposed ITGDB is compatible with mothur. We used the command to generate the results of ```Intersection``` dataset:
+Our proposed ITGDB is compatible with mothur. We used the following command to assgin taxonomy for ```Intersection``` dataset using 8 processors:
 ```
 mothur > classify.seqs(fasta=intersect_seq.fasta, processors=8, reference=taxa_itgdb_seq.fasta, taxonomy=taxa_itgdb_taxa_mothur.txt, methods=wang, cutoff=0)
 ```
