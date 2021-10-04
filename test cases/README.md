@@ -1,4 +1,4 @@
-# Validation Dataset
+# Test Cases
 The following link contains the files of five validation datasets. Each dataset has two files - sequence file and taxonomy file:
 
 16S-UDb: 	```16s-udb_seq.fasta``` (sequence file) 	 and  ```16s-udb_taxa.txt``` (taxonomy file)\
