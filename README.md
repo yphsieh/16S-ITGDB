@@ -24,20 +24,20 @@ In taxonomy files, each ID and its corresponding taxonomy is separated by a tab 
 <img width="988" alt="Screen Shot 2021-09-03 at 9 47 13 AM" src="https://user-images.githubusercontent.com/47639979/131938704-5d3b3e9f-b637-4358-bc6f-79f2c199c048.png">
 
 ## Usage
-Taxonomy-based ITGDB is suggested for 16S full-length classification. The following content shows how to use ITGDBs in SINTAX, SPINGO, Mothur, and QIIME2 classifiers.
+Taxonomy-based ITGDB is suggested for 16S full-length classification. The following content shows how to use ITGDBs in SINTAX, SPINGO, Mothur, and QIIME2 classifiers. All the classifiers listed here provide cut-off value settings to prevent over-classification issue when usgin NGS short sequences (length = 200 ~ 500 bp) for taxonomy assignment tasks. However, third generation sequencing (TGS) of 16S rRNA reads include V1-V9 regions (full-length is about 1500 bp). Applying default setting of cut-off values will result in very conservative taxonomy assignment results (many sequences could not be assigned to the species level). Therefore, deactivate the cut-off settings is suggested for 16S full-length assignment (but not for NGS short sequence data). Users could refer our 16S-ITGDB paper for detail discussion of taxonomic depth and accuracy of deactivating cut-off settings for 16S full-length sequence assignment.
 
 ### SINTAX
 To serve as the reference database in SINTAX algorithms, the taxonomy and sequence files should be combined and converted into a ```UDB``` file in the following format:<br/>
 <img width="1037" alt="Screen Shot 2021-09-03 at 10 02 52 AM" src="https://user-images.githubusercontent.com/47639979/131939495-8c3a85ec-4c04-473c-82b1-f817c42f97c9.png"><br/>
 The converted sequence-based and taxonomy-based integrated database are provided as ```seq_itgdb.udb``` and ```taxa_itgdb.udb``` in ```data/``` directory.<br/>
 
-We assume your SINTAX execution(binary) file is named as "usearch", we used the following command to assign taxonomies:<br/>
+We assume your SINTAX execution(binary) file is named as "usearch" and use 8 threads for parallel computation, the following command is used to assign taxonomies:<br/>
 ```
-./usearch -sintax <input file> -db <reference database> -tabbedout <output file> -strand <plus/both> -sintax_cutoff <bootstrap cutoff>
+./usearch -sintax <input file> -db <reference database> -tabbedout <output file> -strand <plus/both> -sintax_cutoff <bootstrap cutoff> -threads <threads number>
 ```
 For example, to assign the taxonomies of the ```Intersection``` dataset, we used:<br/>
 ```
-./usearch -sintax intersect_seq.fasta -db taxa_itgdb.udb -tabbedout sintax_intersect_itgdb_results.tsv -strand both -sintax_cutoff 0.8
+./usearch -sintax intersect_seq.fasta -db taxa_itgdb.udb -tabbedout sintax_intersect_itgdb_results.tsv -strand both -sintax_cutoff 0.8 -threads 8
 ```
 Detailed tutorials can be found in: https://www.drive5.com/usearch/manual/cmd_sintax.html.<br/>
 
