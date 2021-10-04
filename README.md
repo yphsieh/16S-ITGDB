@@ -57,34 +57,34 @@ to assign the taxonomies of the sequences in the ```Intersection``` dataset. <br
 Detailed descriptions are in: https://github.com/GuyAllard/SPINGO.<br/>
 
 ### Mothur classifier
-The classify.seqs command uses reference files to assign the taxonomies of the sequences in your fasta file.
+The classify.seqs command uses reference files to assign the taxonomies of the sequences in your fasta file with designated number of processors.
 ```
-mothur > classify.seqs(fasta=<input file>, reference=<sequence file of the reference database>, taxonomy=<taxonomy file of the reference database>, methods=<wang>, cutoff=<bootstrap cutoff>)
+mothur > classify.seqs(fasta=<input file>, processors=<number of processors>, reference=<sequence file of the reference database>, taxonomy=<taxonomy file of the reference database>, methods=<wang>, cutoff=<bootstrap cutoff>)
 ```
 mothur will output two files from the classify.seqs command: a ```*.taxonomy``` file which contains a taxonomy string for each sequence, and a ```*.tax.summary``` file which contains a taxonomic outline indicating the number of sequences that were found for your collection at each level.<br/>
 Our proposed ITGDB is compatible with mothur. We used the command to generate the results of ```Intersection``` dataset:
 ```
-mothur > classify.seqs(fasta=intersect_seq.fasta, reference=taxa_itgdb_seq.fasta, taxonomy=taxa_itgdb_taxa.txt, methods=wang, cutoff=0)
+mothur > classify.seqs(fasta=intersect_seq.fasta, processors=8, reference=taxa_itgdb_seq.fasta, taxonomy=taxa_itgdb_taxa.txt, methods=wang, cutoff=0)
 ```
 Detailed usage can be found in: https://mothur.org/wiki/classify.seqs/.
 
 ### QIIME2 classifier
-The trained QIIME2 artifact is in ```data/``` directory (`taxa_itgdb_qiime2.qza`). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage is shown below.
+The trained QIIME2 artifact is in ```data/``` directory (`taxa_itgdb_qiime2.qza`). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage of taxonomic assignment with desired number of processors is shown below.
 ```
 # import the input file as a QIIME2 artifact
 qiime tools import --type 'FeatureData[Sequence]' --input-path <input file> --output-path <input QIIME2 artifact>
 # taxonomic assignment
-qiime feature-classifier classify-sklearn --i-classifier <trained QIIME2 artifact> --i-reads <input QIIME2 artifact> --o-classification <output QIIME2 artifact>
+qiime feature-classifier classify-sklearn --i-classifier <trained QIIME2 artifact> --i-reads <input QIIME2 artifact> --o-classification <output QIIME2 artifact> --p-n-jobs <number of processors>
 ```
 The output file is a ```*.qza``` file, which can be exported to ```taxonomy.tsv``` by:
 ```
 qiime tools export --input-path <output file> --output-path ./
 ```
-For instance, the commands used to classify the sequences in ```Intersection``` dataset are:
+For instance, the commands used to classify the sequences in ```Intersection``` dataset with 8 processors are:
 ```
 qiime tools import --type 'FeatureData[Sequence]' --input-path intersect_seq.fasta --output-path intersect_seq.qza
 
-qiime feature-classifier classify-sklearn --i-classifier taxa_itgdb.qza --i-reads intersect_seq.qza --o-classification qiime2_intersect_itgdb_results.qza
+qiime feature-classifier classify-sklearn --i-classifier taxa_itgdb.qza --i-reads intersect_seq.qza --o-classification qiime2_intersect_itgdb_results.qza --p-n-jobs 8
 
 qiime tools export --input-path qiime2_intersect_itgdb_results.qza --output-path ./
 
