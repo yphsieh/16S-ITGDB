@@ -74,17 +74,17 @@ The trained QIIME2 artifact is in ```data/``` directory (`taxa_itgdb_qiime2.qza`
 # import the input file as a QIIME2 artifact
 qiime tools import --type 'FeatureData[Sequence]' --input-path <input file> --output-path <input QIIME2 artifact>
 # taxonomic assignment
-qiime feature-classifier classify-sklearn --i-classifier <trained QIIME2 artifact> --i-reads <input QIIME2 artifact> --o-classification <output QIIME2 artifact> --p-n-jobs <number of processors>
+qiime feature-classifier classify-sklearn --i-classifier <trained QIIME2 artifact> --i-reads <input QIIME2 artifact> --o-classification <output QIIME2 artifact> --p-n-jobs <number of processors> --p-confidence <bootstrap cutoff>
 ```
 The output file is a ```*.qza``` file, which can be exported to ```taxonomy.tsv``` by:
 ```
 qiime tools export --input-path <output file> --output-path ./
 ```
-For instance, the commands used to classify the sequences in ```Intersection``` dataset with 8 processors are:
+As mentioned before, the cut-off value should be set to 0 for 16S full-length sequences. For instance, the commands used to classify the sequences in ```Intersection``` dataset with 8 processors are:
 ```
 qiime tools import --type 'FeatureData[Sequence]' --input-path intersect_seq.fasta --output-path intersect_seq.qza
 
-qiime feature-classifier classify-sklearn --i-classifier taxa_itgdb.qza --i-reads intersect_seq.qza --o-classification qiime2_intersect_itgdb_results.qza --p-n-jobs 8
+qiime feature-classifier classify-sklearn --i-classifier taxa_itgdb.qza --i-reads intersect_seq.qza --o-classification qiime2_intersect_itgdb_results.qza --p-n-jobs 8 --p-confidence 0
 
 qiime tools export --input-path qiime2_intersect_itgdb_results.qza --output-path ./
 
