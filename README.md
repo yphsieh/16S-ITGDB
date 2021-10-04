@@ -45,13 +45,13 @@ Detailed tutorials can be found in: https://www.drive5.com/usearch/manual/cmd_si
 SPINGO requires a species specific database in the following format: <br/>
 <img width="1217" alt="Screen Shot 2021-09-22 at 11 01 45 AM" src="https://user-images.githubusercontent.com/47639979/134276818-8b3ef7b7-f1f0-4eaf-95cd-d289b5e4d9ab.png">
 
-We provided ```taxa_itgdb_spingo.fa``` in ```data/``` directory as the species specific database. The reference database is converted internally to an efficient indexed structure. To reuse the index, ```--write-index``` option is used. Assume your SPINGO execution file is named as "spingo", the utilized command is as follows:
+We provided ```taxa_itgdb_spingo.fa``` in ```data/``` directory as the species specific database. The reference database is converted internally to an efficient indexed structure. To reuse the index, ```--write-index``` option is used. SPINGO provides parallel computation. Assume your SPINGO execution file is named as "spingo" and use 8 processors for the program, the utilized command is as follows:
 ```
 ./spingo --write-index -p <number of processors> -d <reference database> -i <input file> > <output file>
 ```
 For example, we used the command:
 ```
-./spingo --write-index -p 48 -d database/taxa_itgdb_spingo.fa -i intersect_seq.fasta > spingo_intersect_itgdb_results.tsv
+./spingo --write-index -p 8 -d database/taxa_itgdb_spingo.fa -i intersect_seq.fasta > spingo_intersect_itgdb_results.tsv
 ```
 to assign the taxonomies of the sequences in the ```Intersection``` dataset. <br/>
 Detailed descriptions are in: https://github.com/GuyAllard/SPINGO.<br/>
