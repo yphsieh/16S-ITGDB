@@ -93,7 +93,7 @@ mv taxonomy.tsv qiime2_intersect_itgdb_results.tsv
 Detailed tutorials of QIIME2 usage are in : https://docs.qiime2.org/2020.8/tutorials/. <br/>
 
 
-=======================================================================================================
+===========================================================================================
 
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
