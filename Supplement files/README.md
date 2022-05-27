@@ -5,3 +5,4 @@ https://drive.google.com/drive/folders/1tUpfAOocWiQpDnwtNIRtfSlL8jx86yo1?usp=sha
 
 Currently, the directory includes:<br/>
 (1)taxa_itgdb_discard_list.txt : The discarded sequence list of taxonomy-based ITGDB
+(2)seq_itgdb_discard_list.fasta : The discarded sequence list of sequence-based ITGDB
