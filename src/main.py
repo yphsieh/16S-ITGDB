@@ -1,8 +1,8 @@
 import os
 import argparse
 from utils import *
-from seq_Integration import *
-from taxa_Integration import *
+from seq_integration import *
+from taxa_integration import *
 
 
 if __name__ == "__main__":
