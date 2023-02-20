@@ -69,7 +69,7 @@ mothur > classify.seqs(fasta=intersect_seq.fasta, processors=8, reference=taxa_i
 Detailed usage can be found in: https://mothur.org/wiki/classify.seqs/.
 
 ### QIIME2 classifier
-The trained QIIME2 artifact is in ```data/``` directory (`taxa_itgdb_qiime2.qza`). These artifacts files are trained by QIIME2 version 2020.8, which means these ITGDB artifacts are compatible with QIIME2 version higher than 2020.8. The usage of taxonomic assignment with desired number of processors is shown below.
+The trained QIIME2 classifiers are in ```data/``` directory. The file names are "taxa_itgdb_q2_2020_08_clf.qza", "taxa_itgdb_q2_2021_08_clf.qza", and  "taxa_itgdb_q2_2022_11_clf.qza". In these files, "2020_08" corresponds to QIIME2 version 2020.08, "2021_08" as QIIME2 version 2021_.08, and "2022_11" indicates QIIME2 version 2022.11. Please download the version that compatible with your QIIME2 pipeline. The usage of taxonomic assignment with desired number of processors is shown below.
 ```
 # import the input file as a QIIME2 artifact
 qiime tools import --type 'FeatureData[Sequence]' --input-path <input file> --output-path <input QIIME2 artifact>
